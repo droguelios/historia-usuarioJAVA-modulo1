@@ -8,9 +8,9 @@ public class Empleados {
 
     short codigopostal=12345;
 
-    int id_empleado= 10500;
+    int idempleado= 10500;
 
-    double Precio = 29.00;
+    double precio = 29.00;
 
     float salario = 2000.50f;
 
@@ -18,7 +18,7 @@ public class Empleados {
 
     boolean esactivo= true;
 
-    byte Edad = 21;
+    byte edad = 21;
 
     String nombrecompleto = "alejandro";
 
@@ -34,8 +34,8 @@ public class Empleados {
 
         System.out.printf("Empresa: " +fundado.nombre()+" | NIT: "+fundado.nit());
 
-        System.out.println(" empleado " +  nombrecompleto + "(ID:" +id_empleado + ") ");
-        System.out.println(" salario con bono: " + (salario +Precio));
+        System.out.println(" empleado " +  nombrecompleto + "(ID:" +idempleado + ") ");
+        System.out.println(" salario con bono: " + (salario +precio));
 
     }
 
