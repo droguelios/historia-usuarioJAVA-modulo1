@@ -12,6 +12,7 @@ public class Empleados {
     // obviamente un codigo postal es mas largo pero estamos hablando de un ejemplo de un dato short
     short codigopostal=12345;
 
+<<<<<<< HEAD
     //ID es un dato entero claramente esto va escalando ya que un usuario puede tener
     // mas de un digito en su ID
     int idempleado= 10;
@@ -19,6 +20,11 @@ public class Empleados {
     //double aqui ya nos metemos con los decimales ya que llevan puntos o son datos que
     //matematicamente hablando se necesita saber cuanto seria unala suvida o la resta de un numero
     double Precio = 29.00;
+=======
+    int idempleado= 10500;
+
+    double precio = 29.00;
+>>>>>>> 681ee66fe970c43bf3dfdcae542bf41a10256615
 
     //Aqui seria lo mismo con los decimales pero siendo mas exactos este seria el int o el double
     // de decimales mas pequeños ya qie podrian ser decimales mas grandes o pequeños
@@ -32,9 +38,13 @@ public class Empleados {
     // o no aparece la condicioon seria falsa o visebersa el usaurio esta activo falso pero no aparece es verdadero
     boolean esactivo= true;
 
+<<<<<<< HEAD
     //numeros enterios mas pequeños aqui tambien podria aplicar el int pero decidi usar el byte ya que
     //la edad no puede llegar a niveles tan altos como los 200 o 300 años
     byte Edad = 21;
+=======
+    byte edad = 21;
+>>>>>>> 681ee66fe970c43bf3dfdcae542bf41a10256615
 
     //STR(STRING) cadena de texto donde literalmente lo que estoy declarando es solo texto
     // si pongo numeros podria aver o no un error
@@ -53,7 +63,11 @@ public class Empleados {
         System.out.printf("Empresa: " +fundado.nombre()+" | NIT: "+fundado.nit());
 
         System.out.println(" empleado " +  nombrecompleto + "(ID:" +idempleado + ") ");
+<<<<<<< HEAD
         System.out.println(" salario con bono: " + (salario +Precio));
+=======
+        System.out.println(" salario con bono: " + (salario +precio));
+>>>>>>> 681ee66fe970c43bf3dfdcae542bf41a10256615
 
     }
 
