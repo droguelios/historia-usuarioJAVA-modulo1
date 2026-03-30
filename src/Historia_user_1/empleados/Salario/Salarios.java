@@ -1,4 +1,4 @@
-package Salario;
+package Historia_user_1.empleados.Salario;
 
 public class Salarios {
     int idempleado = 10;

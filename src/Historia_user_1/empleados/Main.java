@@ -1,5 +1,6 @@
-import Salario.Salarios;
-import empleados.Empleados;
+package Historia_user_1.empleados;
+
+import Historia_user_1.empleados.Salario.Salarios;
 
 public class Main {
     public static void main(String[] args) {

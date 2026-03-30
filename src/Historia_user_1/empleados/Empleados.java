@@ -1,4 +1,4 @@
-package empleados;
+package Historia_user_1.empleados;
 
 record EmpresaRecord (String nombre, String nit , int aniofundacion){}
 

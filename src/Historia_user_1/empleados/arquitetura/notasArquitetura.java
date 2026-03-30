@@ -1,4 +1,4 @@
-package arquitetura;/* Notas de Arquitectura
+package Historia_user_1.empleados.arquitetura;/* Notas de Arquitectura
  *
  * TASK 1: Evolución del Ecosistema Java
  * ─────────────────────────────────────────────────────────────
@@ -7,7 +7,7 @@ package arquitetura;/* Notas de Arquitectura
  * │                  JAVA 8 (LEGACY)                        │
  * ├─────────────────────────────────────────────────────────┤
  * │  Lanzado en 2014. Introdujo Lambdas, Streams y la API   │
- * │  de Fecha/Hora. Fue un hito, pero su modelo de clases   │
+ * │  de Fecha/Hora. Fue un hito, pero su Historia_user_1.empleados.modelo de clases   │
  * │  exige mucho "boilerplate": constructores, getters,     │
  * │  setters, toString(), equals() y hashCode() escritos    │
  * │  manualmente o generados por el IDE.                    │
