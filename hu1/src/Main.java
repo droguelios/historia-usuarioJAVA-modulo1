@@ -1,9 +1,12 @@
-package Historia_user_1.empleados;
-
+import Historia_user2.panel_control;
+import Historia_user_1.empleados.Empleados;
 import Historia_user_1.empleados.Salario.Salarios;
 
 public class Main {
     public static void main(String[] args) {
+
+        panel_control.main(new String[]{});
+
         Empleados emp = new Empleados();
         emp.motrarInfo();
 
