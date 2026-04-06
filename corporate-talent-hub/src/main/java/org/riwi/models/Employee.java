@@ -2,64 +2,54 @@ package org.riwi.models;
 
 public class Employee {
 
-    //Long variable because a company's budget can exceed decimals
-    //and integers, that's why it was set as long = budget since as we can see they exceed decimals
+    // Company budget (long is used for large whole numbers)
     long budget = 900000000L;
 
-    //short is a primitive data because we are talking about numbers with very few digits
-    //obviously a zip code is longer but we are talking about an example of a short data
-    short zipcode = 12345;
+    // Employee ZIP code (short is enough for small numeric values)
+    short zipCode = 12345;
 
-    //ID is an integer data clearly this scales up since a user can have
-    //more than one digit in their ID
+    // Unique employee identifier
     int employeeId = 10;
 
-    //double here we get into decimals since they have points or are data that
-    //mathematically speaking we need to know how much an increase or decrease of a number would be
-    double Price = 29.00;
-
-    int employeeIds = 10500;
-
+    // Product or bonus value (decimal number)
     double price = 29.00;
 
-    //Here it would be the same with decimals but being more exact this would be the int or the double
-    //of smaller decimals since they could be larger or smaller decimals
+    // Employee salary (float for decimal values with less precision than double)
     float salary = 2000.50f;
 
-    //Char was used in case someone or in some future wants to add that they can find a
-    //user by the first initial of their letter depending on if I want the one that starts or ends with a letter
-    char initial = 'a';
+    // First initial of the employee's name
+    char initial = 'A';
 
-    //booleans conditions that if a certain user is active it is true but if they are fired so to speak
-    //or don't appear the condition would be false or vice versa the user is active false but doesn't appear is true
-    boolean isactive = true;
+    // Indicates whether the employee is currently active
+    boolean isActive = true;
 
-    //smaller integer numbers here the int could also apply but I decided to use byte since
-    //age cannot reach levels as high as 200 or 300 years
-    byte Age = 21;
+    // Employee age (byte is sufficient for small numbers)
+    byte age = 21;
 
-    //STR(STRING) text string where literally what I am declaring is only text
-    //if I put numbers there could or could not be an error
-    String fullname = "alejandro";
+    // Full name of the employee
+    String fullName = "Alejandro";
 
-    public void showInfo(){
+    public void showInfo() {
 
+        // Welcome message using text block (Java 15+)
         String greeting = """
                 ================================
-                Welcome to record company
+                Welcome to Record Company
                 ================================
                 """;
-        System.out.printf(greeting);
-        Company founded = new Company("RIWI" , "900.123.456", 2023);
 
-        System.out.printf("Company: " + founded.nombre() + " | NIT: " + founded.nit());
+        System.out.println(greeting);
 
-        System.out.println(" employee " +  fullname + "(ID:" + employeeId + ") ");
+        // Creating a Company record instance
+        Company company = new Company("RIWI", "900.123.456", 2023);
 
-        System.out.println(" salary with bonus: " + (salary + Price));
+        // Display company information
+        System.out.println("Company: " + company.name() + " | NIT: " + company.nit());
 
-        System.out.println(" salary with bonus: " + (salary + price));
+        // Display employee basic information
+        System.out.println("\nEmployee: " + fullName + " (ID: " + employeeId + ")");
 
+        // Display calculated salary with bonus
+        System.out.println("Salary with bonus: " + (salary + price));
     }
-
 }
