@@ -7,115 +7,115 @@ import java.util.Locale;
 public class Menu {
 
     /**
-     * TASK 4 - Operador Ternario y Switch Moderno (Java 17+)
-     * Determina la categoría basada en rangos salariales.
+     * TASK 4 - Ternary Operator and Modern Switch (Java 17+)
+     * Determines the category based on salary ranges.
      */
-    public static String obtenerCategoriaSalarial(double salario) {
-        // Uso de ternarios anidados para definir un nivel lógico
-        String nivel = salario > 3000000 ? "alto" : salario > 1500000 ? "medio" : "bajo";
+    public static String getSalaryCategory(double salary) {
+        // Nested ternary operators to define logical levels
+        String level = salary > 3000000 ? "high" : salary > 1500000 ? "medium" : "low";
 
-        // Switch Expression (Java 17): más conciso y devuelve un valor directamente
-        return switch (nivel) {
-            case "alto"  -> "Categoría A - Senior";
-            case "medio" -> "Categoría B - Mid";
-            default      -> "Categoría C - Junior";
+        // Switch Expression (Java 17): concise and returns a value directly
+        return switch (level) {
+            case "high"   -> "Category A - Senior";
+            case "medium" -> "Category B - Mid";
+            default       -> "Category C - Junior";
         };
     }
 
     public static void main(String[] args) {
-        // TASK 2 - Inferencia de tipos (Java 11+): 'var' detecta que es un Scanner
-        // .useLocale(Locale.US) asegura que el punto (.) sea el separador decimal
-        var teclado = new Scanner(System.in).useLocale(Locale.US);
+        // TASK 2 - Type Inference (Java 11+): 'var' detects it's a Scanner
+        // .useLocale(Locale.US) ensures the dot (.) is used as the decimal separator
+        var keyboard = new Scanner(System.in).useLocale(Locale.US);
 
         /**
-         * TASK 3 - Estructuras de Datos (Matrices / Arreglos Bidimensionales)
-         * Representa una tabla donde: Filas = Empleados, Columnas = Notas trimestrales
+         * TASK 3 - Data Structures (Matrices / 2D Arrays)
+         * Represents a table where: Rows = Employees, Columns = Quarterly grades
          */
-        double[][] calificaciones = {
+        double[][] grades = {
                 {4.5, 3.8, 4.2},
                 {3.1, 4.0, 3.7},
                 {4.8, 4.5, 4.9},
         };
 
-        System.out.println("\n===== Reporte Trimestral (Análisis de Matrices) =====");
-        for (int i = 0; i < calificaciones.length; i++) {
-            double suma = 0;
-            for (int j = 0; j < calificaciones[i].length; j++) {
-                suma += calificaciones[i][j]; // Acumulación de valores en la matriz
+        System.out.println("\n===== Quarterly Report (Matrix Analysis) =====");
+        for (int i = 0; i < grades.length; i++) {
+            double sum = 0;
+            for (int j = 0; j < grades[i].length; j++) {
+                sum += grades[i][j]; // Accumulating values in the matrix
             }
-            double promedio = suma / calificaciones[i].length;
+            double average = sum / grades[i].length;
 
             /**
-             * CASTING (Conversión de tipos):
-             * Convertimos de double a int. Nota: Se pierde la parte decimal (truncado).
+             * CASTING (Type conversion):
+             * Converting from double to int. Note: Decimal part is lost (truncated).
              */
-            int puntaje = (int) promedio;
-            System.out.println("Empleado " + (i + 1) + " | Promedio: " + promedio + " | Puntaje: " + puntaje);
+            int score = (int) average;
+            System.out.println("Employee " + (i + 1) + " | Average: " + average + " | Score: " + score);
         }
 
-        int opcion = -1;
+        int option = -1;
 
-        // Bucle Do-While: Garantiza que el menú se muestre al menos una vez
+        // Do-While Loop: Guarantees the menu is displayed at least once
         do {
-            System.out.println("\n===== Sistema de Gestión Riwi =====");
-            System.out.println("1. Agregar empleado");
-            System.out.println("2. Ver empleados");
-            System.out.println("0. Salir");
-            System.out.print("Opción: ");
+            System.out.println("\n===== Riwi Management System =====");
+            System.out.println("1. Add employee");
+            System.out.println("2. View employees");
+            System.out.println("0. Exit");
+            System.out.print("Option: ");
 
             /**
-             * MANEJO DE EXCEPCIONES:
-             * Evita que el programa "explote" si el usuario ingresa letras en un campo numérico.
+             * EXCEPTION HANDLING:
+             * Prevents the program from crashing if the user enters letters in a numeric field.
              */
             try {
-                opcion = teclado.nextInt();
+                option = keyboard.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("¡Error! Debes ingresar un número entero.");
-                teclado.next(); // Limpieza del buffer del Scanner
-                opcion = -1;
-                continue; // Salta al inicio del bucle
+                System.out.println("error: You must enter an integer number.");
+                keyboard.next(); // Clear Scanner buffer
+                option = -1;
+                continue; // Jump to the beginning of the loop
             }
 
             /**
-             * TASK 1 - Switch con Flechas (Java 12/17+)
-             * Elimina la necesidad del 'break' y evita el error de "fall-through" de Java 8.
+             * TASK 1 - Switch with Arrows (Java 12/17+)
+             * Removes the need for 'break' and prevents "fall-through" errors.
              */
-            switch (opcion) {
+            switch (option) {
                 case 1 -> {
-                    System.out.print("Nombre: ");
-                    var nombre = teclado.next();
+                    System.out.print("Name: ");
+                    var name = keyboard.next();
 
-                    System.out.print("Edad: ");
-                    var edad = teclado.nextInt();
+                    System.out.print("Age: ");
+                    var age = keyboard.nextInt();
 
-                    System.out.print("Promedio (0.0 - 5.0): ");
-                    var promedio = teclado.nextDouble();
+                    System.out.print("Average (0.0 - 5.0): ");
+                    var average = keyboard.nextDouble();
 
-                    System.out.print("Salario: ");
-                    var salario = teclado.nextDouble();
+                    System.out.print("Salary: ");
+                    var salary = keyboard.nextDouble();
 
-                    // Validación de rangos con operadores lógicos (AND)
-                    if (edad >= 18 && edad <= 65) {
-                        System.out.println("-> Edad dentro del rango legal.");
+                    // Range validation with logical operators (AND)
+                    if (age >= 18 && age <= 65) {
+                        System.out.println("-> Age within legal range.");
                     } else {
-                        System.out.println("-> Alerta: Edad fuera de rango.");
+                        System.out.println("-> Alert: Age out of range.");
                     }
 
-                    // Operador Ternario simple para decidir el estado
-                    String estado = promedio >= 3.5 ? "Promovido" : "No Promovido";
+                    // Simple Ternary Operator to decide status
+                    String status = average >= 3.5 ? "Promoted" : "Not Promoted";
 
-                    System.out.println("\n====== Ficha Resultante ======");
-                    System.out.println("Nombre:    " + nombre);
-                    System.out.println("Estado:    " + estado);
-                    System.out.println("Categoría: " + obtenerCategoriaSalarial(salario));
+                    System.out.println("\n====== Resulting Profile ======");
+                    System.out.println("Name:     " + name);
+                    System.out.println("Status:   " + status);
+                    System.out.println("Category: " + getSalaryCategory(salary));
                 }
-                case 2 -> System.out.println("Cargando lista de empleados desde la memoria...");
-                case 0 -> System.out.println("Cerrando sesión. ¡Buen trabajo, JJ!");
-                default -> System.out.println("Opción no reconocida en el sistema.");
+                case 2 -> System.out.println("Loading employee list from memory...");
+                case 0 -> System.out.println("Closing session. Great job, Alejo!");
+                default -> System.out.println("Option not recognized by the system.");
             }
 
-        } while (opcion != 0);
+        } while (option != 0);
 
-        teclado.close(); // Buena práctica: liberar el recurso del teclado
+        keyboard.close(); // Good practice: release keyboard resource
     }
 }
