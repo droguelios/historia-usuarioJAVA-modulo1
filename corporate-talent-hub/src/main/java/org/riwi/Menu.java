@@ -1,8 +1,6 @@
 package org.riwi;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.Locale;
+import java.util.*;
 
 public class Menu {
 
