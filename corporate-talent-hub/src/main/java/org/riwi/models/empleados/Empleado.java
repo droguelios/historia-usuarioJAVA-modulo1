@@ -1,6 +1,6 @@
 package org.riwi.models.empleados;
 
-public class Empleados {
+public class Empleado {
 
     private String id;
     private String nombre;
@@ -8,8 +8,8 @@ public class Empleados {
     private double salario;
     private int edad;
 
-    public Empleado(String id, String nombre, String empresa,
-                    double salario, int edad) {
+    public void Empleados(String id, String nombre, String empresa,
+                          double salario, int edad) {
         this.id       = id;
         this.nombre   = nombre;
         this.empresa  = empresa;
