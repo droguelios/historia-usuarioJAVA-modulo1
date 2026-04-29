@@ -1,11 +1,13 @@
-# Corporate Talent Hub - AI Agent Guide
+# Corporate Talent Hub
 
 ## Project Overview
+
 Corporate Talent Hub is a **Java 21 Maven-based HR management system** split across two modules (`corporate-talent-hub` and `hu1`). It demonstrates modern Java features (records, switch expressions, text blocks) while building employee and salary management functionality. The project is organized by "user stories" (historia_user_X) representing different feature domains.
 
 ## Architecture & Key Components
 
 ### Core Package Structure
+
 ```
 org.riwi/
 ├── models/                    # Data models and utilities
@@ -40,6 +42,7 @@ org.riwi/
 ## Developer Workflows
 
 ### Build & Compile
+
 ```bash
 # Maven compile (Java 21 target)
 mvn clean compile
@@ -52,6 +55,7 @@ mvn package
 ```
 
 ### File Organization Notes
+
 - Compiled classes in `target/classes/` (auto-generated)
 - Project structure is split: primary logic in `corporate-talent-hub/`, alternative module in `hu1/`
 - Both modules are independent—maintain separate dependency chains
@@ -59,6 +63,7 @@ mvn package
 ## Project-Specific Conventions
 
 ### Naming Conventions
+
 - **Spanish naming**: Methods use Spanish (e.g., `motrarInfo()`, `actualizarBono()`, `DesempeñoReport`)
 - **Type safety**: Explicit primitive types chosen for memory efficiency:
   - `long` for large budgets (900000000L)
@@ -67,11 +72,13 @@ mvn package
   - `float` for standard salary values
 
 ### Code Comments & Documentation
+
 - Complex logic includes inline comments explaining Java features (see `Menu.java`)
 - Comments document which Java version features are used (Java 11+, 15+, 17+, 21)
 - Validation logic in records is explained with compact constructor syntax
 
 ### Validation & Error Handling
+
 - Numeric validation (age 18-65, performance 0-5) uses conditional logic with informative messages
 - `InputMismatchException` handling clears Scanner buffer with `keyboard.next()`
 - `NullPointerException` catching is used for null reference safety (see `hu1/Main.java`)
@@ -79,17 +86,20 @@ mvn package
 ## Integration Points & Dependencies
 
 ### Maven Configuration
+
 - **Java Target**: 21 (source and compile target)
 - **Encoding**: UTF-8
 - **GroupId**: org.riwi
 - **No external dependencies** currently declared (pure Java stdlib)
 
 ### Cross-Module Communication
+
 - `Menu` imports from both `models` and `user_history_4` packages
 - `Main.java` orchestrates initialization: Salary → Employee → Menu → Employees → Reports
 - User Story 4 (`user_history_4/`) builds on base Employee/Salary models for reporting
 
 ### Known Issues to Watch
+
 - `Main.java` line 27: `List<DesempeñoReport>` syntax error—should be `ArrayList<DesempeñoReport>`
 - `Dinamy_storage.java` is empty—reserved for collection/persistence logic
 - Mixed module imports (both `corporate-talent-hub` and `hu1` Main classes exist)
@@ -102,4 +112,3 @@ mvn package
 4. **When reporting data**: Create record types in `user_history_4/` with compact constructors for validation
 5. **Compilation target**: Always compile for Java 21; use modern features (records, switch expressions, text blocks)
 6. **Spanish conventions**: Maintain Spanish method/package naming for consistency with existing code
-
